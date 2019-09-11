@@ -122,7 +122,7 @@ For the future steps,
 SVM–T-RFE: A novel gene selection algorithm for identifying metastasis-related genes in colorectal cancer using gene expression profiles,
 Biochemical and Biophysical Research Communications
 5. Yousef M, Jung S, Showe LC, Showe MK. Recursive cluster elimination (RCE) for classification and feature selection from gene expression data. BMC Bioinformatics. 2007;8:144. Published 2007 May 2. doi:10.1186/1471-2105-8-144
-6. https://www.mdpi.com/248888
+6. Lin, X.; Li, C.; Zhang, Y.; Su, B.; Fan, M.; Wei, H. Selecting Feature Subsets Based on SVM-RFE and the Overlapping Ratio with Applications in Bioinformatics. Molecules 2018, 23, 52.
 7. I. Guyon, J. Weston, S. Barnhill, V. Vapnik
 Gene selection for cancer classification using support vector machines
 Machine Learning, 46 (2002), pp. 389-422
