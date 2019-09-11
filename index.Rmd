@@ -3,7 +3,7 @@ title: "Novartis Quantiitative Sciences Hackathon : Hack 2"
 ---
 
 
-![Figure 1](franki-chamaki-1K6IQsQbizI-unsplash.jpg)
+![ ](franki-chamaki-1K6IQsQbizI-unsplash.jpg)
 
 
 ##Summary
