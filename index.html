@@ -338,9 +338,9 @@ $(document).ready(function () {
 <p>Since we have small sample and thousands of protein abundance data, the selection of those proteins that are important for distinguishing the different sample classes being compared, poses a challenging problem in high dimensional data analysis.</p>
 <p>Below are some properties I based my model selection on:</p>
 <ul>
-<li><p>Scale to very high dimensions: methods should continue to generalize well even if the number of observed factors p significantly exceeds the number of observations n (p ≫ n)</p></li>
-<li><p>Be interpretable: the output produced by the methods should be directly viable of biological and clinical interpretation, so black-box methods or complex manipulations of the features wasn’t done</p></li>
-<li><p>􏰀Biologically, protein expression is done in cascades. Thus, we would expect groups of proteins to be highly correlated with each other, representing the interplay of up and down-regulation. Hence, it is important to analyze the data jointly: low-dimensional probabilistic models or statistical tests ignore complex relationships between the predictors. We can see this from the correlation plot of 500 random proteins below.</p></li>
+<li><p><strong>Scale to very high dimensions</strong>: methods should continue to generalize well even if the number of observed factors p significantly exceeds the number of observations n (p ≫ n)</p></li>
+<li><p><strong>Be interpretable:</strong> the output produced by the methods should be directly viable of biological and clinical interpretation, so black-box methods or complex manipulations of the features wasn’t done</p></li>
+<li><p>􏰀Biologically, protein expression is done in cascades. Thus, we would expect groups of proteins to be highly correlated with each other, representing the interplay of up and down-regulation. Hence, it is important to <strong>analyze the data jointly:</strong> low-dimensional probabilistic models or statistical tests ignore complex relationships between the predictors. We can see this from the correlation plot of 500 random proteins below.</p></li>
 </ul>
 <div class="figure">
 <img src="Screen%20Shot%202019-09-10%20at%204.08.06%20PM.png" alt="Figure 2" />

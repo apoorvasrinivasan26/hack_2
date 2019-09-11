@@ -43,11 +43,11 @@ Since we have small sample and thousands of protein abundance data,  the selecti
 Below are some properties I based my model selection on: 
 
 
-*   Scale to very high dimensions: methods should continue to generalize well even if the number of observed factors p significantly exceeds the number of observations n (p ≫ n) 
+*   __Scale to very high dimensions__: methods should continue to generalize well even if the number of observed factors p significantly exceeds the number of observations n (p ≫ n) 
 
-* Be interpretable: the output produced by the methods should be directly viable of biological and clinical interpretation, so black-box methods or complex manipulations of the features wasn't done
+* __Be interpretable:__ the output produced by the methods should be directly viable of biological and clinical interpretation, so black-box methods or complex manipulations of the features wasn't done
 
-* 􏰀Biologically, protein expression is done in cascades. Thus, we would expect groups of proteins to be highly correlated with each other, representing the interplay of up and down-regulation. Hence, it is important to analyze the data jointly: low-dimensional probabilistic models or statistical tests ignore complex relationships between the predictors. We can see this from the correlation plot of 500 random proteins below.
+* 􏰀Biologically, protein expression is done in cascades. Thus, we would expect groups of proteins to be highly correlated with each other, representing the interplay of up and down-regulation. Hence, it is important to __analyze the data jointly:__ low-dimensional probabilistic models or statistical tests ignore complex relationships between the predictors. We can see this from the correlation plot of 500 random proteins below.
 
 ![Figure 2](Screen Shot 2019-09-10 at 4.08.06 PM.png)
 
