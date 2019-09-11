@@ -53,7 +53,7 @@ Below are some properties I based my model selection on:
 
 SVM-RFE[1] is recognized as one of the most effective filtering methods for genes in the bioinfomatics world. It is based on an algorithm that finds the best possible combination for classification. The drawback of it, however, is that it does it without considering the differentially significant features between the classes. Features with notable classification accuracy and also differentially significant between the classes have a predominant role in a biological aspect. Hence, to overcome this limitation, in the proposed algorithm[2], t-statistics is included along with SVM-RFE.
 
-##SVM-TRFE algorithm
+##SVM-T-RFE algorithm
 
 1) The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch's t-test which is calculated as ![ ](t_stat.png)
 
