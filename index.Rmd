@@ -55,8 +55,10 @@ SVM-RFE[1] is recognized as one of the most effective filtering methods for gene
 
 ##SVM-TRFE algorithm
 
-1) The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch's t-test and it is incorporated into  the weight value of that particular gene or the feature by ![ ](Screen Shot 2019-09-11 at 6.37.08 PM.png)
-where θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1, $t_i$ is the t-statistics between the two comapred groups and $w_i$ is the SVM-RFE weight vector defined by Guyon et el. [7]
+1) The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch's t-test which is calculated as ![ ](t_stat.png)
+
+2) It is incorporated into  the weight value of that particular gene or the feature by ![ ](Screen Shot 2019-09-11 at 6.37.08 PM.png)
+where  $t_i$ is the t-statistics between the two comapred groups and $w_i$ is the SVM-RFE weight vector defined by Guyon et el. [7] and θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1.
 
 2) The iteration process is followed by backward removal of the feature. 
 3) The iteration process is continued until there is only one feature remaining in the dataset. 
