@@ -327,7 +327,7 @@ $(document).ready(function () {
 <p>The data we were presented were protein abundance measurements(rfu2) of 5080 proteins from SOMAscan assay generated simultaneously. These measurements were from 33 animals from 3 different studies injected with 8 different doses at 4 timepoints(day 0,1 ,4 and 7). Compound blood concentration at these different timepoints was also made available. We note that some of these monkeys were reused for these different studies.</p>
 <p>For the purpose of our analysis, we assume that the animals reused for different studies were independent since they were one year apart. Since, we’re interested in looking at dose-response relationship, our first task was to identify an appropriate dose to conduct our analysis.</p>
 <p>The idea was to pick a dose where we has sufficient sample size and where log pk drug concentration wasn’t to an extent where it could result in over-expression of protein. From Figure 1, we can see that dose 0.1 has the maximum number of animals(12) so we have sufficient sample size and it results in reasonable drug concentration in blood.</p>
-<p>percentage body weight change was recoded into factors where they were categorized as significant body weight loss(&lt; -1) and little or no body weight loss(&gt;= -1) in order to perform below described classification problem. All the rfu2 values were log transformed. Protein measurements at timepoint 0 was excluded because we wanted to study the effects after the dose had been administered.</p>
+<p><strong>percentage body weight change was recoded into factors where they were categorized as significant body weight loss(&lt; -1) and little or no body weight loss(&gt;= -1) in order to perform below described classification problem.</strong> All the rfu2 values were log transformed. Protein measurements at timepoint 0 was excluded because we wanted to study the effects after the dose had been administered.</p>
 <div class="figure">
 <img src="dose_conc_frames.png" alt="Figure 1" width="500" />
 <p class="caption">Figure 1</p>
@@ -348,23 +348,13 @@ $(document).ready(function () {
 </div>
 <p>SVM-RFE[1] is recognized as one of the most effective filtering methods for genes in the bioinfomatics world. It is based on an algorithm that finds the best possible combination for classification. The drawback of it, however, is that it does it without considering the differentially significant features between the classes. Features with notable classification accuracy and also differentially significant between the classes have a predominant role in a biological aspect. Hence, to overcome this limitation, in the proposed algorithm[2], t-statistics is included along with SVM-RFE.</p>
 </div>
-<div id="svm-t-rfe-algorithm" class="section level2">
-<h2>SVM-T-RFE algorithm</h2>
-<p>The primary objective of SVM-RFE with t-statistic as proposed by Xiaobo et al. [4]</p>
-<p>In this approach,</p>
-<p>Firstly, we perform two sample Welch’s t-test on the dataset, the T-statistic is calculated as follows:</p>
-<div class="figure">
-<img src="t_stat.png" />
-
-</div>
-<p>where n1 and n2 are the sizes of sample 1 and sample 2, and the other parameters are the mean and variances of each sample.</p>
-<p>the ranking score[4] is calculated as below where <span class="math inline">\(\theta\)</span> parameter determines the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1. <span class="math inline">\(w_i\)</span> is weight from the original SVM-RFE where it’s calculated as <img src="rename.png" alt="w" /></p>
-<div class="figure">
-<img src="t_test.png" />
-
-</div>
-<p>The performance of SVM–T-RFE protein selection algorithm depends upon θ. When θ is set to 0, the SVM weights are not taken into consideration. When θ is set to 1, T-statistic is not considered, and the SVM–T-RFE classifier is equal to the SVM-RFE classifier.</p>
-<p>We use <span class="math inline">\(r_i\)</span> to measure the importance of protein i for classification. The iteration process is followed by backward removal of the feature. The iteration process is continued until there is only one feature remaining in the dataset. The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.</p>
+<div id="svm-trfe-algorithm" class="section level2">
+<h2>SVM-TRFE algorithm</h2>
+<ol style="list-style-type: decimal">
+<li><p>The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch’s t-test and it is incorporated into the weight value of that particular gene or the feature by <img src="Screen%20Shot%202019-09-11%20at%206.37.08%20PM.png" /> where θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1, <span class="math inline">\(t_i\)</span> is the t-statistics between the two comapred groups and <span class="math inline">\(w_i\)</span> is the SVM-RFE weight vector defined by Guyon et el. [7]</p></li>
+<li>The iteration process is followed by backward removal of the feature.</li>
+<li><p>The iteration process is continued until there is only one feature remaining in the dataset. 4)The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. 5)Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.</p></li>
+</ol>
 </div>
 <div id="modelling" class="section level2">
 <h2>Modelling</h2>
@@ -419,6 +409,7 @@ $(document).ready(function () {
 <li>Xiaobo Li, Sihua Peng, Jian Chen, Bingjian Lü, Honghe Zhang, Maode Lai, SVM–T-RFE: A novel gene selection algorithm for identifying metastasis-related genes in colorectal cancer using gene expression profiles, Biochemical and Biophysical Research Communications</li>
 <li>Yousef M, Jung S, Showe LC, Showe MK. Recursive cluster elimination (RCE) for classification and feature selection from gene expression data. BMC Bioinformatics. 2007;8:144. Published 2007 May 2. <a href="doi:10.1186/1471-2105-8-144" class="uri">doi:10.1186/1471-2105-8-144</a></li>
 <li><a href="https://www.mdpi.com/248888" class="uri">https://www.mdpi.com/248888</a></li>
+<li>I. Guyon, J. Weston, S. Barnhill, V. Vapnik Gene selection for cancer classification using support vector machines Machine Learning, 46 (2002), pp. 389-422</li>
 </ol>
 </div>
 
