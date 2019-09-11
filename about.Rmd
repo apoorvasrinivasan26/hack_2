@@ -4,3 +4,6 @@ title: "About"
 
 ### About this site
 
+
+
+This site was made for NOvartis Quantitative Sciences Hackathon using rmarkdown and the source code can be found <here>(https://github.com/apoorvasrinivasan26/hack_2) 
