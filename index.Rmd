@@ -61,11 +61,12 @@ SVM-RFE[1] is recognized as one of the most effective filtering methods for gene
 where  $t_i$ is the t-statistics between the two comapred groups and $w_i$ is the SVM-RFE weight vector defined by Guyon et el. [7] and θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1.
 
 2) The iteration process is followed by backward removal of the feature. 
+
 3) The iteration process is continued until there is only one feature remaining in the dataset. 
-4
-)The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. 
-5
-)Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.
+
+4)The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. 
+
+5)Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.
 
 
 ##Modelling
