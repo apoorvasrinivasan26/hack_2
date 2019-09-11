@@ -2,6 +2,10 @@
 title: "Novartis Quantiitative Sciences Hackathon : Hack 2"
 ---
 
+
+![Figure 1](franki-chamaki-1K6IQsQbizI-unsplash.jpg)
+
+
 ##Summary
 In this project presented by Novartis during their 2019 Academia to Industry Quantitative Sciences Hackathon, I
 
