@@ -99,9 +99,9 @@ We can see that SVM-RFE with t-statistics does a far better job of classifying w
 Below are the list of top proteins from SVM-RFE and SVM-T-RFE. Interestingly, we notice that the target 1620 shows up as a top protein from the SVM-RFE model. This needs to be further investigated in this future.
 
 
-![Top 20 Proteins from SVM-RFE](svm_rfe_highlight.png)
+![Top 20 Proteins from SVM-RFE](svm_rfe_highligh_rank.png)
 
-![Top 20 Proteins from SVM-T-RFE ](svm_rfe_tstat.png)
+![Top 20 Proteins from SVM-T-RFE ](svm_t_pval.png)
 
 ##Conclusion and Future Directions:
 
