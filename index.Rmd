@@ -55,18 +55,20 @@ SVM-RFE[1] is recognized as one of the most effective filtering methods for gene
 
 ##SVM-T-RFE algorithm
 
-1) The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch's t-test which is calculated as ![ ](t_stat.png)
+1.  The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch's t-test which is calculated as ![ ](t_stat.png)
 
-2) It is incorporated into  the weight value of that particular gene or the feature by ![ ](Screen Shot 2019-09-11 at 6.37.08 PM.png)
+2.  It is incorporated into  the weight value of that particular  feature by ![ ](Screen Shot 2019-09-11 at 6.37.08 PM.png)
 where  $t_i$ is the t-statistics between the two comapred groups and $w_i$ is the SVM-RFE weight vector defined by Guyon et el. [7] and θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1.
 
-2) The iteration process is followed by backward removal of the feature. 
+3.  The iteration process is followed by backward removal of the feature. 
 
-3) The iteration process is continued until there is only one feature remaining in the dataset. 
+4.  The iteration process is continued until there is only one feature remaining in the dataset. 
 
-4)The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. 
+5. The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. 
 
-5)Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.
+6. Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.
+
+To gain a deeper understanding of how this algorithm works, please see the article by Xiaobo et al.[4]
 
 
 ##Modelling

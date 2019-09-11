@@ -348,14 +348,17 @@ $(document).ready(function () {
 </div>
 <p>SVM-RFE[1] is recognized as one of the most effective filtering methods for genes in the bioinfomatics world. It is based on an algorithm that finds the best possible combination for classification. The drawback of it, however, is that it does it without considering the differentially significant features between the classes. Features with notable classification accuracy and also differentially significant between the classes have a predominant role in a biological aspect. Hence, to overcome this limitation, in the proposed algorithm[2], t-statistics is included along with SVM-RFE.</p>
 </div>
-<div id="svm-trfe-algorithm" class="section level2">
-<h2>SVM-TRFE algorithm</h2>
+<div id="svm-t-rfe-algorithm" class="section level2">
+<h2>SVM-T-RFE algorithm</h2>
 <ol style="list-style-type: decimal">
 <li><p>The coefficient and the expression mean difference between two compared groups of each individual feature is calculated using welch’s t-test which is calculated as <img src="t_stat.png" /></p></li>
-<li><p>It is incorporated into the weight value of that particular gene or the feature by <img src="Screen%20Shot%202019-09-11%20at%206.37.08%20PM.png" /> where <span class="math inline">\(t_i\)</span> is the t-statistics between the two comapred groups and <span class="math inline">\(w_i\)</span> is the SVM-RFE weight vector defined by Guyon et el. [7] and θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1.</p></li>
-<li>The iteration process is followed by backward removal of the feature.</li>
-<li><p>The iteration process is continued until there is only one feature remaining in the dataset. 4 )The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight. 5 )Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.</p></li>
+<li><p>It is incorporated into the weight value of that particular feature by <img src="Screen%20Shot%202019-09-11%20at%206.37.08%20PM.png" /> where <span class="math inline">\(t_i\)</span> is the t-statistics between the two comapred groups and <span class="math inline">\(w_i\)</span> is the SVM-RFE weight vector defined by Guyon et el. [7] and θ is the parameter determining the tradeoff between SVM weight score and T-statistic, and θ is the value between 0 and 1.</p></li>
+<li><p>The iteration process is followed by backward removal of the feature.</p></li>
+<li><p>The iteration process is continued until there is only one feature remaining in the dataset.</p></li>
+<li><p>The smallest ranking weight will be removed by the algorithm and stored in a stack, while remaining the feature variables have a significant impact for producing weight.</p></li>
+<li><p>Finally, the feature variables which are stored in the stack will be listed in the descending order of descriptive different degree.</p></li>
 </ol>
+<p>To gain a deeper understanding of how this algorithm works, please see the article by Xiaobo et al.[4]</p>
 </div>
 <div id="modelling" class="section level2">
 <h2>Modelling</h2>
